@@ -130,6 +130,46 @@ console.log("100"===100);//false
 console.log(null===undefined);//false
 console.log(0===0);//true
 
+console.log("--------logical Operators------------------");
+
+/*
+c1      c2          &&(AND)         ||(OR)          !c1(NOT)
+true    true        true            true            false
+true    false       false           true            false
+false   true        false           true            true
+false   false       false           false           true
+
+Test Data:
+----------------
+p=q=44 l=77 m=78 g=h=90 i=91 j=90
+
+
+*/
+console.log("------&&---------");
+
+console.log((p===q) && (i>j));//true
+console.log((i>l) && (h>=i));//false
+console.log((m===l) && (h===j));//false
+console.log((q>g) && (p>h));//false
+
+console.log("------||---------");
+
+console.log((p===q) || (i>j));//true
+console.log((i>l) || (h>=i));//true
+console.log((m===l) || (h===j));//true
+console.log((q>g) || (p>h));//false
+
+console.log("------!(NOT)---------");
+
+
+console.log((p===q));//true
+
+
+console.log(!(p===q));//false
+
+
+console.log((p>q));//false
+console.log(!(p>q));//true
 
 
 

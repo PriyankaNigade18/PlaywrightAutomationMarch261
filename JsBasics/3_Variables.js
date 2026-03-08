@@ -144,7 +144,7 @@ console.log(book);
 const pi=3.14;
 //Cannot redeclare block-scoped variable 'pi'.(strict mode error)
 //const pi=3.14;
-pi=6.78;
+//pi=6.78;//TypeError: Assignment to constant variable.
 
 
 
