@@ -36,38 +36,31 @@ Scenarios:
 
 */
 
-//print Hello statment 5 times
+//print Hello statement 5 time
 
 let i=1;
-while(i<=5)
-{
+
+do{
     console.log("Hello");
     i++;
-}
+    
+}while(i<=5);
 
-console.log("--------------------");
-
-//sum of digits of number num=1234 sum=10
-
-
-let num=1234,rem,sum=0;
+console.log("-------------");
 
 
-while(num>0)
-{
-    rem=num%10;
-    num=Math.floor(num/10);
-    sum=sum+rem;
-}
+let j=1;
 
-console.log("Sum of digits for 1234: "+sum);
+do{
+    console.log("Welcome!");
+    j++;
+    
+}while(j===5);
+console.log("-------------");
 
+// let k=1;
 
-
-
-
-
-
-
-
-
+// do{
+//     console.log("Welcome!");
+  
+// }while(k<=5);
