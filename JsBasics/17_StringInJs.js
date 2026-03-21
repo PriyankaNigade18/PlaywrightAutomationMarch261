@@ -123,3 +123,17 @@ console.log("month: "+month);
 console.log("year: "+year);
 
 
+//How to reverse any string
+
+let programming="Javascript";
+console.log("Current string is: "+programming);
+let result="";
+let lastIndex=programming.length-1;
+for(let i=lastIndex;i>=0;i--)
+{
+    result=result+programming.charAt(i);
+}
+
+console.log("Reverse of string is: "+result);
+
+
