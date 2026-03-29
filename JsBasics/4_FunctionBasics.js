@@ -39,5 +39,3 @@ let test3=()=>{console.log("Arrow function is calling....");};
 
 //call
 test3();
-
-
