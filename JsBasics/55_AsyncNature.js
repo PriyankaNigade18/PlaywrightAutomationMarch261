@@ -1,5 +1,6 @@
 
 
+
 //Synchronus: one task at a time
 for(let i=1;i<=5;i++)
 {
@@ -44,3 +45,17 @@ console.log(response);
 //call
 
 apiTest();
+
+import {readFile} from "fs/promises"
+//file reading scenario
+
+// let data=readFile("./JsBasics/Test.txt","utf-8");
+// console.log(data);//Promise { <pending> }
+
+async function readFileData()
+{
+let data=await readFile("./JsBasics/Test.txt","utf-8");
+console.log(data);
+}
+
+readFileData();
