@@ -127,8 +127,13 @@ let zipcode:number|string;
 zipcode=411047;
 zipcode="411047";
 
+
 console.log(zipcode);//"411047"
 console.log(typeof zipcode);
+
+
+
+
 
 
 
