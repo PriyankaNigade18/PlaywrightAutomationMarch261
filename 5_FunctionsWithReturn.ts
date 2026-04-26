@@ -56,3 +56,56 @@ async function getData()
 }
 
 getData();
+
+
+console.log("-------------------------------");
+
+function getZipCode():Promise<number>
+{
+    return Promise.resolve(411047);
+}
+
+//way1:
+getZipCode().then((res)=>{
+console.log("Status is: "+res);
+})
+
+//way2
+async function getAreaData()
+{
+let areaCode=await getZipCode();
+console.log(areaCode);
+
+}
+
+//call
+getAreaData();
+
+
+//Playwright scenario
+
+//playwright code
+function click(element:string):Promise<void>
+{
+    console.log("Click on : "+element);
+    return Promise.resolve();
+    
+}
+
+//utility
+async function doClick(element:string)
+{
+    await click(element);
+}
+
+//in test case
+doClick('forgot password link');
+
+
+
+
+
+
+
+
+

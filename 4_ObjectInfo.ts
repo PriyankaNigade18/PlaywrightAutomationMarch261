@@ -69,6 +69,7 @@ let newPerson:info={
     name:"Kavita"
 }
 
-newPerson.id=
+//Cannot assign to 'id' because it is a read-only property.
+//newPerson.id=201;
 //in ts constant declaration is possible with readonly keyword(Only for objects)
 const pi:number=3.14;
