@@ -1,0 +1,50 @@
+
+Playwright
+============
+Playwright is End to end automation framework for web application and
+api test
+
+How many ways are there to design playwright test case
+--------------------------------------------
+1.Using playwright Test Runner(recommended)
+    import {test} from "@playwright/test"
+
+   chromiun.launch():Returns the browser instance.Promise<Browser>
+    channel:Browser distribution channel.
+    newPage():Creates a new page in a new browser context.
+
+2.Using aysnc function
+    launch():Returns the browser instance.Promise<Browser>
+    channel:Browser distribution channel.
+    newPage():Creates a new page in a new browser context.
+
+
+Playwright execute by default test cases on 3 browsers and in headless mode
+
+To Run playwright testcase 
+-----------------------------
+1.this command execute all test cases from tests folder
+npx playwright test
+
+2.To run specific test case
+npx playwright test tests/Tc03_LaunchTestInMsEdge.spec.ts
+
+3.To run test case in headed view(with browser/ui)
+npx playwright test --headed
+
+4.To run test case on one browser
+npx playwright test --headed --project=chromium
+
+5.UI Execution
+npx playwright test --ui
+
+Playwright application commands
+=============================
+1.To Open application:Promise<Response|null>
+await page.goto("url")
+
+2.To get the title: Promise<String>
+await page.title();
+
+3.To get the page Url
+page.url();
