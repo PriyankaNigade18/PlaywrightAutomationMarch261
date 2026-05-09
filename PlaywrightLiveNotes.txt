@@ -48,3 +48,130 @@ await page.title();
 
 3.To get the page Url
 page.url();
+
+Assertion
+================
+To validate current state of the application we use assertion
+In Playwright two types of assertion supported
+1.Hard Assertion
+-----------------------
+When we apply any assertion and if assertion get fail then execution 
+will stop on that line and you will assertion error
+
+we use expect() for assertion
+
+2.Soft Assertion
+-----------------------
+When we apply any assertion and if assertion get fail then execution 
+will not stop and assertion error you will after remaining test execution completed
+
+we use expect.soft() for assertion
+
+await expect(page).toHaveURL("full url");
+await expect(page).toHaveURL(/partial url/);
+await expect(page).toHaveTitle("full title");
+
+===============================================
+goto()
+==========
+Page.goto(url: string, options?: {
+    referer?: string | undefined;
+    timeout?: number | undefined;
+    waitUntil?: "load" | "domcontentloaded" | "networkidle" | "commit" | undefined;
+} | undefined): Promise<Response | null>
+
+'domcontentloaded' - consider operation to be finished when the DOMContentLoaded event is fired.
+'load' - consider operation to be finished when the load event is fired.
+'networkidle' - DISCOURAGED consider operation to be finished when there are no network connections for at least 500 ms. Don't use this method for testing, rely on web assertions to assess readiness instead.
+'commit' - creceived anonsider operation to be finished when network response is d the document started loading.
+
+
+Navigation In Playwright
+===================================
+goBack(): navigate back
+goForward(): navigate forward
+reload(): to refresh page
+
+
+How to automate WebElements in Playwright
+===========================================
+
+What is Webelement?
+=====================
+any ui control from the webpage 
+for example textbox,link,text,heading,button,checkbox,radio,dropdown..etc
+
+To automate webelement
+-----------------------
+1.Identify webelement from the webpage
+2.perform action on those webelement
+
+To identify webelement we use Locator
+
+What is Locator?
+--------------------
+Locator is address of the webelement from webpage
+
+Playwright support 3 Locator strategies
+========================================
+1.InBuilt Locators(7 InBuilt locator)
+2.CssSelector
+3.Xpath
+
+Actions of webelement
+======================
+textbox,searchbox-->type--->fill()
+button,link,dropdown--->click---->click()
+checkbox,radiobutton-->click--->click(),check(),uncheck()
+To clear the text: clear()
+
+7 InBuilt Locator Methods
+===============================
+These are the recommended built-in locators.
+
+page.getByRole() to locate by explicit and implicit accessibility attributes.
+page.getByText() to locate by text content.
+page.getByLabel() to locate a form control by associated label's text.
+page.getByPlaceholder() to locate an input by placeholder.
+page.getByAltText() to locate an element, usually image, by its text alternative.
+page.getByTitle() to locate an element by its title attribute.
+page.getByTestId() to locate an element based on its data-testid attribute (other attributes can be configured).
+
+CssSelector
+=======================
+-Css is cascaded stylesheet this is language used to provide style to the webelement
+
+-cssSelector is locator to identify webelement
+-cssSelector identify element based on cssProperty
+-cssSelector can travel in one direction parent to child and that is reason
+cssselector is faster than xpath
+
+1.tagname with id
+2.tagname with attribute
+3.tagname with classname
+4.tagname with attribute,classname and id
+
+1.tagname with id
+-----------------------
+Syntax:
+===========
+tagname#id
+OR
+#id
+
+<textarea id="APjFqb">
+example:
+textarea#APjFqb    1 of 1
+
+The method returns an element locator that can be used to perform actions on this page / frame.
+page.locator("cssSelector/xpath");
+
+
+
+
+
+
+
+
+
+
