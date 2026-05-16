@@ -151,6 +151,11 @@ cssselector is faster than xpath
 3.tagname with classname
 4.tagname with attribute,classname and id
 
+
+The method returns an element locator that can be used to perform actions on this page / frame.
+page.locator("cssSelector/xpath");
+
+
 1.tagname with id
 -----------------------
 Syntax:
@@ -163,9 +168,184 @@ OR
 example:
 textarea#APjFqb    1 of 1
 
-The method returns an element locator that can be used to perform actions on this page / frame.
-page.locator("cssSelector/xpath");
+2.tagname with attribute
+-------------------------------
+Syntax:
+-------------
+tagname[attribute='value']
 
+
+3.tagname with className
+-----------------------------
+Syntax
+----------
+tagname.className
+
+For class name In CssSelector
+----------------------
+<button class="btn btn-default btn-primary"/>
+                c1      c2        c3
+
+button.btn.btn-default.btn-primary 1 of 1
+OR
+button.btn    1 of 1
+
+
+4.tagname with id,classname,attribute
+----------------------------------------
+Syntax
+---------
+tagname#id.className[attribute='value']
+
+
+CssSelector With Symbols *, ^, $
+===============================
+
+<input id="twotabsearchtextbox"/>
+
+1.  * includes(partial match)
+----------------------------------
+Syntax:
+------------
+tagname[attribute *='partial value']
+
+2.  ^ prefix match starts-with()
+----------------------------------
+Syntax:
+------------
+tagname[attribute ^='prefix value']
+
+3.  $ suffix
+----------------------------------
+Syntax:
+------------
+tagname[attribute $='suffix value']
+
+CssSelector(Multiple elements)
+======================================
+cssSelector with Parent to child node navigation
+
+1. space
+parenttagname  childtagname   ________direct+Indirect child
+aside a    13 match
+2. >
+parenttagname>childtagname ____________direct child
+div.list-group>a   13 match
+
+
+CssSelector with indexing
+==================================
+parenttagname>childtagname:nth-child(index)
+
+aside a:nth-child(4) 1 of 1
+div.list-group>a:nth-child(3) 1 of 1
+
+=========================================================
+To Interact any checkbox /radio button
+============================================
+1.click()
+2.check()
+3.uncheck()
+
+
+How to get the element text in Playwright
+-----------------------------------
+1.textContent():Promise<string|null>
+Returns the node.textContent.
+
+2.innerText():Promise<string>
+Returns the element.innerText.
+
+Applicable for Serach box where we can interact with keyboard keys
+---------------------------------------------
+page.locator().pressSequentially()
+
+NOTE In most cases, you should use locator.fill(value[, options]) instead. You only need to press keys one by one if there is special keyboard handling on the page.
+
+Focuses the element, and then sends a keydown, keypress/input, and keyup event for each character in the text.
+
+To press any keyboard key on the element
+-------------------------------------------
+press():Focuses the matching element and presses a combination of the keys.
+
+==============================================
+Xpath Locator
+==============
+-xpath is path of the element from xml/html document
+-xpath identify element from DOM(Document object model)
+-Xpath support methods
+-xpath can travel in both direction like parent to child node or child to parent node
+-xpath also support xpath axies(ancestor,parent,child,following,preceding,sibling)
+
+html DOM
+------------
+<html>-----------------Root element
+<head>
+</head>
+
+<body>
+<input>
+<a>----------element
+<div>
+
+</body>
+</html>
+
+===============================
+Types of Xpath
+=================
+1.Absolute Xpath
+--------------------
+- Absolute xpath identify element from the root node
+- starts with '/'
+
+/html/body/div[2]/div/div/div/div[2]/div/form/div[1]/input
+
+2.Relative Xpath
+-----------------------
+- Relative xpath identify element from elements relative property
+- starts with '//'
+
+//*[@id="input-email"]
+here * identify any tag whose id is input-email
+
+Syntax
+===========
+//tagname[@attribute='value']
+
+Xpath with operators
+========================
+
+
+xpath with indexing/position()
+==================================
+
+
+xpath with methods
+========================
+1.text()
+
+2.normalize-space()
+
+3.contains()
+
+4.starts-with()
+
+xpath Axies
+=============
+1.ancestor
+
+2.parent
+
+3.child
+
+4.following
+
+5.following-sibling
+
+6.preceding
+
+7.preceding-sibling
 
 
 
