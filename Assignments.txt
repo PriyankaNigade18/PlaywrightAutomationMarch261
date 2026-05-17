@@ -1,0 +1,60 @@
+
+Assignment1: Open website and verify title.
+Steps
+Launch browser miscrosoft edge
+Navigate to website https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+Verify page title
+Verify URL
+Expected
+Correct title OrangeHRM should display
+Correct URL should open
+
+
+Assignment2:Practice navigation methods.
+Steps
+Open https://www.amazon.in/
+open Fashion page
+get the title and print same
+Navigate back
+get the title and print same
+Navigate forward
+get the title and print same
+Reload page
+
+Assignment3: 
+Navigate to https://formy-project.herokuapp.com/form application 
+and automate checkboxes,firstname,lastname,jobtitle,date with first(),last() and nth()
+
+Assignment 4: Automate from website 3 test cases
+Navigate to this application 
+https://practicetestautomation.com/practice-test-login/
+
+TestData:
+Use next credentials to execute Login:
+Username: student
+Password: Password123
+
+Test case 1: Positive LogIn test
+Open page
+Type username student into Username field
+Type password Password123 into Password field
+Push Submit button
+Verify new page URL contains practicetestautomation.com/logged-in-successfully/
+Verify new page contains expected text ('Congratulations' or 'successfully logged in')
+Verify button Log out is displayed on the new 
+
+Test case 2: Negative username test
+Open page
+Type username incorrectUser into Username field
+Type password Password123 into Password field
+Push Submit button
+Verify error message is displayed
+Verify error message text is Your username is invalid!
+
+Test case 3: Negative password test
+Open page
+Type username student into Username field
+Type password incorrectPassword into Password field
+Push Submit button
+Verify error message is displayed
+Verify error message text is Your password is invalid!

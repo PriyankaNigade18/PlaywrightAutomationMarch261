@@ -313,41 +313,166 @@ Syntax
 ===========
 //tagname[@attribute='value']
 
+
+========================================================
 Xpath with operators
 ========================
+1.and
+Syntax
+------------
+//tagname[@attribute1='value' and @attribute2='value']
 
+2.or
+Syntax
+------------
+//tagname[@attribute1='value' or @attribute2='value']
 
+==================================================
 xpath with indexing/position()
 ==================================
+Syntax
+---------
+(xpath)[index]
 
+OR
 
+(xpath)[position()=index]
+
+=====================================================
 xpath with methods
 ========================
 1.text()
+------------------
+-Based on visible text of element we can identify that element
+-text() never ignore white space
+
+Syntax
+----------
+//tagname[text()='visibleText']
+
+//a[text()='Logout']
+
 
 2.normalize-space()
+--------------------------
+-Based on visible text of element we can identify that element
+-normalize-space() ignore white space like trim()
+
+Syntax
+===========
+//tagname[normalize-space()='visibletext']
 
 3.contains()
+--------------
+class="oxd-icon bi-caret-down-fill oxd-userdropdown-icon"
+         c1          c2                  c3
+
+Syntax:
+---------------
+//tagname[contains(@attribute,'partial value')]
+
+OR
+
+//tagname[contains(text(),'partial text')]
+
+example
+------------
+//i[contains(@class,'oxd-userdropdown-icon')]
+
 
 4.starts-with()
+--------------------
+-Based on prefix value we can identify element
+Syntax:
+---------------
+//tagname[starts-with(@attribute,'prefix value')]
+
+OR
+
+//tagname[starts-with(text(),'prefix text')]
+
+======================================================
+
+From multiple match if you want any element which in between
+-----------------------------------------------------------
+first()
+last()
+nth(index)
 
 xpath Axies
 =============
 1.ancestor
+----------------
+Syntax
+--------------
+//tagname[@attribute='value']//ancestor::ancestor tagname
 
 2.parent
+---------------
+Syntax
+--------------
+//tagname[@attribute='value']//parent::parent tagname
 
 3.child
+Syntax
+--------------
+//tagname[@attribute='value']//child::child tagname
 
 4.following
+Syntax
+--------------
+//tagname[@attribute='value']//following::following tagname
 
 5.following-sibling
+Syntax
+--------------
+//tagname[@attribute='value']//following-sibling::following tagname
 
 6.preceding
+Syntax
+--------------
+//tagname[@attribute='value']//preceding::preceding tagname
 
 7.preceding-sibling
+Syntax
+--------------
+//tagname[@attribute='value']//preceding-sibling::preceding tagname
+
+=====================
+<tbody>----------------Grand parent:ancestor
+<tr>--------------Parent of all td
+ 
+         <td>4</td>--------for John preceding sibling
+
+          <td>John</td> ------------element
+
+          <td>Robinson</td>//following-sibling
+
+          <td>jr5527</td>//following-sibling
+ 
+         <td>//following-sibling
+              <a href="user.html"><i class="icon-pencil"></i></a>
+              <a role="button" href="#myModal" data-toggle="modal"><i class="icon-remove"></i></a>
+          </td>
+
+        </tr>
+</tbody>
 
 
+
+
+
+
+
+
+
+
+
+==============================================
+
+
+Fixture and session storage
+=================================
 
 
 
